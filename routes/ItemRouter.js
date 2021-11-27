@@ -11,7 +11,7 @@ router.get('/items', getItems)
 
 router.get('/items/:id', getOneItem)
 
-router.get('/facture/:id', getFacture)
+router.get('/facs/facture/:id', getFacture)
 
 router.post('/facture/:id', addFacture);
 

@@ -53,7 +53,10 @@ exports.getItems = (req, res) => {
 //Demande d'une seule serie par id
 exports.getOneItem = async (req, res) => {
     await Item.findById({ _id: req.params.id })
-        .then(data => res.render('item', { item: data }))
+        .then(data =>{ 
+            console.log(data);
+            res.render('item', { item: data });
+        })
         .catch(err => res.json(err))
 }
 
@@ -62,7 +65,7 @@ exports.getOneItem = async (req, res) => {
 
 //Demande d'une seule facture par id
 exports.getFacture = (req, res) => {
-    res.render('facture', { id: req.params.id });
+    res.render('facs/facture', { id: req.params.id });
 }
 
 //L'ajout d'une facture au base de donnees
