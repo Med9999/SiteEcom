@@ -15,8 +15,16 @@ exports.addItemPage = (req, res) => {
 }
 
 //Page de modification
-exports.getUpdateItem = (req,res)=>{
-    res.render('./Admin/updateItem', {id : req.params.id});
+exports.getUpdateItem =async (req,res)=>{
+
+    await Item.findById({ _id: req.params.id })
+        .then(data =>{ 
+            console.log(data);
+            res.render('./Admin/updateItem', {item : data});
+        })
+        .catch(err => res.json(err))
+
+    
 }
 
 //Ajout d'une serie
@@ -36,9 +44,9 @@ exports.addItem = (fields, res) => {
                 return res.render("/admin/addItem", { message: fields.flash('message') })
             }
 
-            fields.session.ajout = Item.title + " est bien ajoutée";
+            // fields.session.ajout = Item.title + " est bien ajoutée";
 
-            return res.redirect("/admin/items")
+             res.redirect("/admin/items");
 
         })
     } else {

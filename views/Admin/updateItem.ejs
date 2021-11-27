@@ -8,19 +8,19 @@
         <% }%>
 
          <div class=""></div>
-         <form action="<%= '/admin/updateItem/'+locals.id %>" method="post" enctype="multipart/form-data">
+         <form action="<%= '/admin/updateItem/'+locals.item._id %>" method="post" enctype="multipart/form-data">
           <h3 class="text-center">Modifier une serie</h3>
           <div class="my-3">
-            <input type="text" name="title"  class="form-control" placeholder="titre">
+            <input type="text" name="title" value="<%= locals.item.title %>" class="form-control" placeholder="Titre">
           </div>
           <div class="my-3">
-            <input type="text" name="price" class="form-control" placeholder="prix">
+            <input type="text" name="price" value="<%= locals.item.price %>" class="form-control" placeholder="Prix">
           </div>
           <div class="my-3">
-            <textarea  type="text" name="content" class="form-control" placeholder="description"></textarea>
+            <textarea  type="text" name="content" value="<%= locals.item.content %>" class="form-control" placeholder="Description"></textarea>
           </div>
           <div class="mb-3">
-            <select name="genre" class="form-select">
+            <select name="genre" value="<%= locals.item.genre %>" class="form-select">
               <option>Drama</option>
               <option>Historique</option>
               <option>Aventure</option>
