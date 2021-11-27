@@ -22,7 +22,6 @@ exports.getUpdateItem = (req,res)=>{
 //Ajout d'une serie
 exports.addItem = (fields, res) => {
     if (fields.body && fields.file) {
-        
         let item = new Item({
             title: fields.body.title,
             content: fields.body.content,
