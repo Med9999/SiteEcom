@@ -1,0 +1,56 @@
+<%- include('./components/Navbar.ejs'); %>
+  <%- include('./components/ClassificationBar.ejs'); %>
+    <div class="container ">
+      <div class="row row-cols-1 row-cols-md-3 g-4 m-3">
+
+        <% locals.items.forEach(e=> { %>
+          <div class="col">
+            <div class="card">
+              <img style="float:left;height:400px;object-fit:cover;" src=<%='../images/' +e.image %> class="card-img-top" >
+              <div class="card-body">
+                <h5 style="height:40px;
+                line-height:20px; /* Height / no. of lines to display */
+                overflow:hidden;font-weight: 600;" class="card-title">
+                  <%= e.title %>
+                </h5>
+                <p style="height:80px;
+                line-height:20px; /* Height / no. of lines to display */
+                overflow:hidden;" class="card-text">
+                  <%= e.content %>
+                </p>
+                <div class="row justify-content-between ">
+                  
+                  <div class="col-6 my-2 py-auto">
+                    <p class="card-text">
+                      <span class="badge rounded-pill bg-warning text-dark"> <%= e.genre %></span>
+                      </p>
+                  </div>
+                  
+                  <div  style="font-weight: 900;" class="col-4 my-2 text-end ">
+                    <small class="text-muted ">
+                       <%= e.price %> €
+                      </small>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <form class="col-12" action="<%= '/items/'+e._id %>" method="get">
+                    <button class="col-12 btn btn-primary " type="button" value="<%= e._id %>"
+                      onclick="rediriger(this.value);">
+                      Voir plus
+                    </button>
+                  </form>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+    <script>
+      //On a cree cette fonction Js pour nous rediriger vers la page de description d'une serie
+      rediriger = (val) => {
+        window.location.replace("/items/" + val)
+      }
+    </script>

@@ -1,0 +1,44 @@
+<%- include('../components/Navbar.ejs'); %>
+  <div class="container p-5">
+    <div class="row justify-content-center">
+      <div class="col-6">
+
+        <% if (locals.message) { %>
+          <div class="alert alert-danger" role="alert"><%= locals.message %></div>
+        <% }%>
+
+         <div class=""></div>
+         <form action="<%= '/admin/updateItem/'+locals.id %>" method="post" enctype="multipart/form-data">
+          <h3 class="text-center">Modifier une serie</h3>
+          <div class="my-3">
+            <input type="text" name="title"  class="form-control" placeholder="titre">
+          </div>
+          <div class="my-3">
+            <input type="text" name="price" class="form-control" placeholder="prix">
+          </div>
+          <div class="my-3">
+            <input type="text" name="content" class="form-control" placeholder="description">
+          </div>
+          <div class="mb-3">
+            <select name="genre" class="form-select">
+              <option>Drama</option>
+              <option>Historique</option>
+              <option>Aventure</option>
+              <option>Thriller</option>
+              <option>Comedy</option>
+              <option>Horreur</option>
+              <option>Sci-Fi</option>
+              <option>Action</option>
+            </select>
+          </div> 
+
+           <div class="input-group mb-3">
+            <input type="file" name="image" class="form-control">
+          </div> 
+          <button type="submit"  class="btn btn-info">Modifier</button>
+        </form> 
+       
+      </div>
+    </div>
+  </div>
+

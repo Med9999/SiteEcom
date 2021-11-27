@@ -1,0 +1,17 @@
+<%- include('./components/Navbar.ejs'); %>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-5 my-2 mx-auto">
+                <form action=<%= '/facture/'+locals.id %> method="post" class="card p-5">
+                    <h3 class="text-center">Vos informations :</h3>
+                    <div class="my-3">
+                        <input type="text" name="nom" class="form-control" placeholder="Votre nom">
+                    </div>
+                    <div class="my-3">
+                        <input type="text" name="email" class="form-control" placeholder="Votre email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Commander</button>
+                </form>
+            </div>
+        </div>
+    </div>

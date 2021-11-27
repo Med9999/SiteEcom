@@ -1,0 +1,48 @@
+
+    <div class="container mt-4 mb-2    p-md-4 mb-4 text-white rounded  " style="background-color: #303030;">
+       
+        <div class="row my-2  ">
+            <div class="col">
+                
+                <form class="" action="/items" method="get">
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <input class="form-control" type="search" placeholder="Chercher une série" name="nom">
+                        </div>
+                        <!-- <div class="col-md-3"></div> -->
+                        <div class="col-md-2">
+                            <button class="btn btn-warning col-12" type="submit">Chercher</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> 
+        <form action="/items" method="get">
+        <div class="row ">
+           
+            <div class="col-md-3">
+                <input type="text" name="min" class="form-control" placeholder="Min prix en €">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="max" class="form-control" placeholder="Max prix en €">
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <select name="genre" class="form-select">
+                        <option>Drama</option>
+                        <option>Historique</option>
+                        <option>Aventure</option>
+                        <option>Thriller</option>
+                        <option>Comedy</option>
+                        <option>Horreur</option>
+                        <option>Sci-Fi</option>
+                        <option>Action</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button class=" btn btn-warning col-12" type="submit">Lister</button>
+            </div>
+       
+        </div> </form>
+    </div>

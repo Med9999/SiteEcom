@@ -1,0 +1,47 @@
+<%- include('./components/Navbar.ejs'); %>
+
+
+<div class="container">
+
+  <div class="row mt-5 mx-md-5">
+    <div class="card  mb-3 ">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src=<%= '../images/'+locals.item.image %>  class="img-fluid rounded-start">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= locals.item.title %>
+            </h5>
+            <p class="card-text"><small class="text-muted">
+              <%= locals.item.genre %>
+            </small></p>
+            <p class="card-text"><small class="text-muted">
+              <%= locals.item.price %> €
+            </small></p>
+            <p class="card-text">
+              <%= locals.item.content %>
+            </p>
+            <p class="card-text"><small class="text-muted">
+                <%= locals.item.createdAt %>
+              </small></p>
+              <p class="card-text">
+                <button type="button" value="<%= locals.item._id %>" onclick="rediriger(this.value);" class="btn btn-primary" >
+                  Commander
+                </button>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+  rediriger = (val)=>{
+    window.location.replace("/facture/"+val)
+  }
+</script>
